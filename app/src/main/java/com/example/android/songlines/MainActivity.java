@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     EditText songName, artistName;
     public static TextView lyricsText;
     ProgressBar loader;
-    String song_name="beautiful";
-    String artist_Name="akon";
+    String song_name;
+    String artist_Name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         lyricsText = (TextView) findViewById(R.id.setLyrics);
 
         loader.setVisibility(View.GONE);
-        //song_name=songName.getText().toString();
-        //artist_Name=artistName.getText().toString();
+        song_name=songName.getText().toString();
+        artist_Name=artistName.getText().toString();
     }
 
     public void getLyrics(View v)
@@ -71,10 +71,6 @@ public class MainActivity extends AppCompatActivity {
             try {
                 JSONObject json = new JSONObject(xml);
                 if (json != null) {
-                    /*JSONObject details = json.getJSONArray("lyrics").getJSONObject(0);
-                    JSONObject main = json.getJSONObject("main");
-                    DateFormat df = DateFormat.getDateTimeInstance();*/
-
                     lyricsText.setText(json.getString("lyrics"));
                     loader.setVisibility(View.GONE);
                     Intent i=new Intent(MainActivity.this,Lyrics.class);
