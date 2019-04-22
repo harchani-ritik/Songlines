@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar loader;
     String song_name;
     String artist_Name;
-
+    TextView Print;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -34,14 +34,17 @@ public class MainActivity extends AppCompatActivity {
         songName = (EditText) findViewById(R.id.editText2);
         artistName = (EditText) findViewById(R.id.editText3);
         lyricsText = (TextView) findViewById(R.id.setLyrics);
+        Print=(TextView)findViewById(R.id.print) ;
 
         loader.setVisibility(View.GONE);
-        song_name=songName.getText().toString();
-        artist_Name=artistName.getText().toString();
+
+        //Print.setText(song_name+" "+artist_Name);
     }
 
     public void getLyrics(View v)
     {
+        song_name=songName.getText().toString();
+        artist_Name=artistName.getText().toString();
         taskLoadUp(song_name);
     }
 

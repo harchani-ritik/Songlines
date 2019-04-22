@@ -34,7 +34,9 @@
         android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="beautiful"
+        android:hint="Track name"
+        android:textColorHint="@android:color/white"
+        android:text=""
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +70,9 @@
         android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="akon"
+        android:text=""
+        android:hint="Artist name"
+        android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -141,6 +145,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:layout_constraintVertical_bias="0.156" />
+
+    <TextView
+        android:id="@+id/print"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="To Print"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView1"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
