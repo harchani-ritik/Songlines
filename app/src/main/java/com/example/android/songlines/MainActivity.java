@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     EditText songName, artistName;
     public static TextView lyricsText;
     ProgressBar loader;
-    String song_name;
-    String artist_Name;
+    String song_name="beautiful";
+    String artist_Name="akon";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         lyricsText = (TextView) findViewById(R.id.setLyrics);
 
         loader.setVisibility(View.GONE);
-        song_name=songName.getText().toString();
-        artist_Name=artistName.getText().toString();
+        //song_name=songName.getText().toString();
+        //artist_Name=artistName.getText().toString();
     }
 
     public void getLyrics(View v)
