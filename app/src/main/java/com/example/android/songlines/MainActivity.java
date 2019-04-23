@@ -38,13 +38,14 @@ public class MainActivity extends AppCompatActivity {
 
         loader.setVisibility(View.GONE);
 
-        //Print.setText(song_name+" "+artist_Name);
+
     }
 
     public void getLyrics(View v)
     {
         song_name=songName.getText().toString();
         artist_Name=artistName.getText().toString();
+        Toast.makeText(getApplicationContext(), "Searching", Toast.LENGTH_SHORT).show();
         taskLoadUp(song_name);
     }
 
@@ -65,7 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
         protected String doInBackground(String...args) {
-            String xml = com.example.android.songlines.Function.excuteGet("https://api.lyrics.ovh/v1/"+artist_Name+"/"+song_name);
+            String xml = com.example.android.songlines.Function.excuteGet("https://theaudiodb.com/api/v1/json/1/searchtrack.php?s=akon&t=beautiful");
+            if(xml!=null)
+                Print.setText(xml);
             return xml;
         }
         @Override
@@ -82,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(), "Error, Check SongName", Toast.LENGTH_SHORT).show();
+                loader.setVisibility(View.GONE);
             }
         }
     }
