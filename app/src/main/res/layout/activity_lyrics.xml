@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
+    android:background="@color/Black"
     android:alpha="0.8"
     tools:context=".Lyrics">
 
@@ -14,9 +14,9 @@
 
         <TextView
             android:id="@+id/Lyrics"
-            android:layout_margin="50sp"
+            android:layout_margin="70sp"
             android:text="LYRICS"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/holo_orange_dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

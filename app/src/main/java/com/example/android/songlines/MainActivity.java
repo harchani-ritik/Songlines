@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(), "Error, Check SongName", Toast.LENGTH_SHORT).show();
+                loader.setVisibility(View.GONE);
             }
         }
     }
