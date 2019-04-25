@@ -13,8 +13,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     String song_name;
     String artist_Name;
     TextView Print;
+    String link;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -77,10 +81,17 @@ public class MainActivity extends AppCompatActivity {
             try {
                 JSONObject json = new JSONObject(xml);
                 if (json != null) {
-                    lyricsText.setText(json.getString("lyrics"));
+                    //JSONObject track = json.getJSONObject("track");
+                    JSONArray array=json.getJSONArray("track");
+                    JSONObject jo=array.getJSONObject(0);
+                    link = jo.getString("strMusicVid");
+
+                    /*lyricsText.setText(json.getString("lyrics"));
                     loader.setVisibility(View.GONE);
                     Intent i=new Intent(MainActivity.this,Lyrics.class);
-                    startActivity(i);
+                    startActivity(i);*/
+
+                    Print.setText("Youtube Link="+link);
 
                 }
             } catch (JSONException e) {
