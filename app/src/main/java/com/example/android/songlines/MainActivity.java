@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
         }
         protected String doInBackground(String...args) {
             String xml = com.example.android.songlines.Function.excuteGet("https://theaudiodb.com/api/v1/json/1/searchtrack.php?s=akon&t=beautiful");
-            if(xml!=null)
-                Print.setText(xml);
+            //if(xml!=null)
+               //Print.setText(xml);
             return xml;
         }
         @Override
