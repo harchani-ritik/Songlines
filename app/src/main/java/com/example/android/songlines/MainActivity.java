@@ -3,11 +3,13 @@ package com.example.android.songlines;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -21,13 +23,14 @@ import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText songName, artistName;
     public static TextView lyricsText;
+    EditText songName, artistName;
+    TextView Title,t2,t3;
+    Typeface mycustomfont,anotherfont,newfont;
     ProgressBar loader;
-    String song_name;
-    String artist_Name;
-    TextView Print;
-    String link;
+    String song_name,artist_Name,link;
+    Button b;
+    TextView print;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,10 +41,22 @@ public class MainActivity extends AppCompatActivity {
         songName = (EditText) findViewById(R.id.editText2);
         artistName = (EditText) findViewById(R.id.editText3);
         lyricsText = (TextView) findViewById(R.id.setLyrics);
-        Print=(TextView)findViewById(R.id.print) ;
+        Title=(TextView)findViewById(R.id.textView1);
+        t2=(TextView)findViewById(R.id.textView2);
+        t3=(TextView)findViewById(R.id.textView3);
+        b=(Button)findViewById(R.id.button);
+        print=(TextView)findViewById(R.id.print);
 
         loader.setVisibility(View.GONE);
-
+        mycustomfont= Typeface.createFromAsset(getAssets(),"fonts/monoton-regular.ttf");
+        Title.setTypeface(mycustomfont);
+        anotherfont=Typeface.createFromAsset(getAssets(),"fonts/alice-regular.ttf");
+        t2.setTypeface(anotherfont);
+        t3.setTypeface(anotherfont);
+        b.setTypeface(anotherfont);
+        newfont=Typeface.createFromAsset(getAssets(),"fonts/cursive.ttf");
+        songName.setTypeface(newfont);
+        artistName.setTypeface(newfont);
 
     }
 
@@ -71,8 +86,6 @@ public class MainActivity extends AppCompatActivity {
         }
         protected String doInBackground(String...args) {
             String xml = com.example.android.songlines.Function.excuteGet("https://theaudiodb.com/api/v1/json/1/searchtrack.php?s=akon&t=beautiful");
-            //if(xml!=null)
-               //Print.setText(xml);
             return xml;
         }
         @Override
@@ -81,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
             try {
                 JSONObject json = new JSONObject(xml);
                 if (json != null) {
-                    //JSONObject track = json.getJSONObject("track");
                     JSONArray array=json.getJSONArray("track");
                     JSONObject jo=array.getJSONObject(0);
                     link = jo.getString("strMusicVid");
@@ -90,14 +102,14 @@ public class MainActivity extends AppCompatActivity {
                     loader.setVisibility(View.GONE);
                     Intent i=new Intent(MainActivity.this,Lyrics.class);
                     startActivity(i);*/
+                    print.setText(link);
 
-                    Print.setText("Youtube Link="+link);
 
                 }
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(), "Error, Check SongName", Toast.LENGTH_SHORT).show();
-                loader.setVisibility(View.GONE);
             }
+            loader.setVisibility(View.GONE);
         }
     }
 }

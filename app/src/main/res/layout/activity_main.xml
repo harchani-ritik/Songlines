@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:alpha="0.9"
-    android:background="@drawable/musical"
+    android:background="@drawable/music2"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="@string/app_name"
-        android:textColor="@android:color/white"
+        android:textColor="@color/DarkOrange"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
@@ -29,21 +28,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="104dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Track name"
-        android:textColorHint="@android:color/white"
+        android:inputType="textPersonName"
         android:text=""
-        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textColor="@color/White"
+        android:textColorHint="@color/White"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
-        app:layout_constraintVertical_bias="0.753" />
+        app:layout_constraintVertical_bias="0.65999997" />
 
     <TextView
         android:id="@+id/textView2"
@@ -51,13 +51,13 @@
         android:layout_height="57dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="112dp"
         android:text="Track Name"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textColor="@color/White"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/editText3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent" />
 
 
@@ -65,17 +65,21 @@
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="Artist name"
         android:inputType="textPersonName"
         android:text=""
-        android:hint="Artist name"
-        android:textColorHint="@android:color/white"
-        android:textColor="@android:color/white"
+        android:textColor="@color/White"
+        android:textColorHint="@color/White"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -83,13 +87,13 @@
         android:layout_height="57dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="172dp"
         android:text="Artist Name"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
+        android:textColor="@color/White"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -100,17 +104,18 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:alpha="0.8"
-        android:background="@android:color/background_dark"
-        android:text="Get Lyrics"
+        android:alpha="0.9"
+        android:background="@android:color/holo_orange_dark"
         android:onClick="getLyrics"
-        android:textColor="@android:color/white"
+        android:text="Get Lyrics"
+        android:textColor="@color/White"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintVertical_bias="0.583" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -121,12 +126,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.449"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/setLyrics"
