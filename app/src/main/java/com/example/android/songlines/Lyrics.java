@@ -9,15 +9,14 @@ public class Lyrics extends AppCompatActivity {
 
     TextView lyrics;
     Typeface lyricsfonts;
-    String s;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_lyrics);
         lyrics=(TextView)findViewById(R.id.Lyrics);
-        s=MainActivity.lyricsText.getText().toString();
-        lyrics.setText(s);
+        lyrics.setText(MainActivity.trackLyrics);
 
         lyricsfonts=Typeface.createFromAsset(getAssets(),"fonts/cursive.ttf");
         lyrics.setTypeface(lyricsfonts);

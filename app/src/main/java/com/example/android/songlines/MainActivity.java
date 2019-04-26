@@ -23,6 +23,8 @@ import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static String trackLyrics;
+
     public static TextView lyricsText;
     EditText songName, artistName;
     TextView Title,t2,t3;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar loader;
     String song_name,artist_Name,link;
     Button b;
-    TextView print;
+    EditText print;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         t2=(TextView)findViewById(R.id.textView2);
         t3=(TextView)findViewById(R.id.textView3);
         b=(Button)findViewById(R.id.button);
-        print=(TextView)findViewById(R.id.print);
+        print=(EditText) findViewById(R.id.print);
 
         loader.setVisibility(View.GONE);
         mycustomfont= Typeface.createFromAsset(getAssets(),"fonts/monoton-regular.ttf");
@@ -85,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
         protected String doInBackground(String...args) {
-            String xml = com.example.android.songlines.Function.excuteGet("https://theaudiodb.com/api/v1/json/1/searchtrack.php?s=akon&t=beautiful");
+            String xml = com.example.android.songlines.Function.excuteGet("https://api.lyrics.ovh/v1/"+artist_Name+"/"+song_name);
+            String x = com.example.android.songlines.Function.excuteGet("https://www.theaudiodb.com/api/v1/json/1/searchtrack.php?s="+artist_Name+"&t="+song_name);
             return xml;
         }
         @Override
@@ -94,15 +97,14 @@ public class MainActivity extends AppCompatActivity {
             try {
                 JSONObject json = new JSONObject(xml);
                 if (json != null) {
-                    JSONArray array=json.getJSONArray("track");
+                    /*JSONArray array=json.getJSONArray("track");
                     JSONObject jo=array.getJSONObject(0);
-                    link = jo.getString("strMusicVid");
-
-                    /*lyricsText.setText(json.getString("lyrics"));
-                    loader.setVisibility(View.GONE);
+                    link = jo.getString("strMusicVid");*/
+                    trackLyrics=json.getString("lyrics");
+                    //lyricsText.setText(trackLyrics);
                     Intent i=new Intent(MainActivity.this,Lyrics.class);
-                    startActivity(i);*/
-                    print.setText(link);
+                    startActivity(i);
+                    //print.setText(link);
 
 
                 }
