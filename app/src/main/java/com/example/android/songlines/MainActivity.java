@@ -19,18 +19,17 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Iterator;
-
 public class MainActivity extends AppCompatActivity {
 
     public static String trackLyrics;
+    public static String trackName,artName,albumName,genre,mvd,des,yLink;
 
     public static TextView lyricsText;
     EditText songName, artistName;
     TextView Title,t2,t3;
     Typeface mycustomfont,anotherfont,newfont;
     ProgressBar loader;
-    String song_name,artist_Name,link;
+    String song_name,artist_Name,obj;
     Button b;
     EditText print;
     @Override
@@ -42,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         loader=(ProgressBar)findViewById(R.id.progressBar);
         songName = (EditText) findViewById(R.id.editText2);
         artistName = (EditText) findViewById(R.id.editText3);
-        lyricsText = (TextView) findViewById(R.id.setLyrics);
         Title=(TextView)findViewById(R.id.textView1);
         t2=(TextView)findViewById(R.id.textView2);
         t3=(TextView)findViewById(R.id.textView3);
@@ -88,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         }
         protected String doInBackground(String...args) {
             String xml = com.example.android.songlines.Function.excuteGet("https://api.lyrics.ovh/v1/"+artist_Name+"/"+song_name);
-            String x = com.example.android.songlines.Function.excuteGet("https://www.theaudiodb.com/api/v1/json/1/searchtrack.php?s="+artist_Name+"&t="+song_name);
+            obj = com.example.android.songlines.Function.excuteGet("https://www.theaudiodb.com/api/v1/json/1/searchtrack.php?s="+artist_Name+"&t="+song_name);
             return xml;
         }
         @Override
@@ -96,17 +94,23 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 JSONObject json = new JSONObject(xml);
+                JSONObject json2= new JSONObject(obj);
                 if (json != null) {
-                    /*JSONArray array=json.getJSONArray("track");
-                    JSONObject jo=array.getJSONObject(0);
-                    link = jo.getString("strMusicVid");*/
                     trackLyrics=json.getString("lyrics");
-                    //lyricsText.setText(trackLyrics);
+
+                    JSONArray array=json2.getJSONArray("track");
+                    JSONObject jo=array.getJSONObject(0);
+                    //trackName,artName,albumName,genre,mvd,des,yLink
+                    trackName=jo.getString("strTrack");
+                    artName=jo.getString("strArtist");
+                    albumName=jo.getString("strAlbum");
+                    genre=jo.getString("strGenre");
+                    mvd=jo.getString("strMusicVidDirector");
+                    des=jo.getString("strDescriptionEN");
+                    yLink = jo.getString("strMusicVid");
+
                     Intent i=new Intent(MainActivity.this,Lyrics.class);
                     startActivity(i);
-                    //print.setText(link);
-
-
                 }
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(), "Error, Check SongName", Toast.LENGTH_SHORT).show();
