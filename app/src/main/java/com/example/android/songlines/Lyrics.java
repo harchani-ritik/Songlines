@@ -73,8 +73,7 @@ public class Lyrics extends AppCompatActivity {
     {
         Intent i=new Intent(Intent.ACTION_SEND);
         i.setType("text/plain");
-        i.putExtra(Intent.EXTRA_TEXT,MainActivity.trackLyrics+"\n\n<TRACK LYRICS BY SONGLINES>");
+        i.putExtra(Intent.EXTRA_TEXT,MainActivity.trackName+" by "+MainActivity.artName+"\n\n"+MainActivity.trackLyrics+"\n\n<TRACK LYRICS BY SONGLINES>");
         startActivity(Intent.createChooser(i,"Share Using"));
     }
-
 }

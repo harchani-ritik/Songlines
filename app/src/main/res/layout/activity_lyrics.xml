@@ -96,10 +96,13 @@
             android:id="@+id/v3"
             android:layout_width="wrap_content"
             android:layout_height="15dp"
-            android:layout_marginStart="64dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="28dp"
+            android:layout_marginEnd="8dp"
             android:text="TextView"
             android:textColor="#00C2FF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.275"
             app:layout_constraintStart_toEndOf="@+id/k3"
             app:layout_constraintTop_toBottomOf="@+id/v2" />
 
