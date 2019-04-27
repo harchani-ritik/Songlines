@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar loader;
     String song_name,artist_Name,obj;
     Button b;
-    EditText print;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         t2=(TextView)findViewById(R.id.textView2);
         t3=(TextView)findViewById(R.id.textView3);
         b=(Button)findViewById(R.id.button);
-        print=(EditText) findViewById(R.id.print);
 
         loader.setVisibility(View.GONE);
         mycustomfont= Typeface.createFromAsset(getAssets(),"fonts/monoton-regular.ttf");
