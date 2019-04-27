@@ -66,8 +66,6 @@ public class Lyrics extends AppCompatActivity {
         V7.setTypeface(newfont);
         bt.setTypeface(anotherfont);
         //trackName,artName,albumName,genre,mvd,yLink,des
-
     }
 
-    public void 
 }
