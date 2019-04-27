@@ -60,7 +60,7 @@
             android:id="@+id/v1"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="164dp"
             android:text="TextView"
             android:textColor="#00C2FF"
@@ -96,24 +96,24 @@
             android:id="@+id/v3"
             android:layout_width="wrap_content"
             android:layout_height="15dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="176dp"
+            android:layout_marginEnd="8dp"
             android:text="TextView"
             android:textColor="#00C2FF"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.219"
+            app:layout_constraintStart_toEndOf="@+id/k3"
             app:layout_constraintTop_toBottomOf="@+id/v2" />
 
         <TextView
             android:id="@+id/k3"
             android:layout_width="wrap_content"
             android:layout_height="18dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="28dp"
             android:text="Album Name"
             android:textColor="@color/DarkOrange"
-            app:layout_constraintEnd_toStartOf="@+id/v3"
-            app:layout_constraintHorizontal_bias="0.405"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/k2" />
 
@@ -122,12 +122,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="8dp"
             android:text="TextView"
             android:textColor="#00C2FF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.387"
+            app:layout_constraintHorizontal_bias="0.352"
             app:layout_constraintStart_toEndOf="@+id/k4"
             app:layout_constraintTop_toBottomOf="@+id/v3" />
 
@@ -152,6 +152,8 @@
             android:layout_marginEnd="8dp"
             android:paddingHorizontal="25dp"
             android:text="TextView"
+            android:autoLink="web"
+
             android:textColor="#00C2FF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.405"
