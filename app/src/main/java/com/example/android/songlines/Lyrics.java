@@ -1,8 +1,10 @@
 package com.example.android.songlines;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -66,6 +68,13 @@ public class Lyrics extends AppCompatActivity {
         V7.setTypeface(newfont);
         bt.setTypeface(anotherfont);
         //trackName,artName,albumName,genre,mvd,yLink,des
+    }
+    public void ShareLyrics(View view)
+    {
+        Intent i=new Intent(Intent.ACTION_SEND);
+        i.setType("text/plain");
+        i.putExtra(Intent.EXTRA_TEXT,MainActivity.trackLyrics+"\n\n<TRACK LYRICS BY SONGLINES>");
+        startActivity(Intent.createChooser(i,"Share Using"));
     }
 
 }

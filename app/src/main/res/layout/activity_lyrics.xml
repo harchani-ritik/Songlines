@@ -227,6 +227,8 @@
             android:alpha="0.9"
             android:background="@android:color/holo_orange_dark"
             android:text="Share Lyrics"
+            android:paddingHorizontal="15dp"
+            android:onClick="ShareLyrics"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toTopOf="@+id/Lyrics"
             app:layout_constraintEnd_toEndOf="parent"
