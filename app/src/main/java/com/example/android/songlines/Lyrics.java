@@ -3,13 +3,14 @@ package com.example.android.songlines;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Lyrics extends AppCompatActivity {
 
     TextView title,lyricsTitle,lyrics,K1,K2,K3,K4,K6,K7,V1,V2,V3,V4,V6,V7;//Key-Value Pairs
     Typeface mycustomfont,anotherfont,newfont;
-
+    Button bt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +19,7 @@ public class Lyrics extends AppCompatActivity {
         lyrics=(TextView)findViewById(R.id.Lyrics);
         title=(TextView)findViewById(R.id.textView) ;
         lyricsTitle=(TextView)findViewById(R.id.lyricstextview);
+        bt=(Button)findViewById(R.id.button2);
 
         K1=(TextView)findViewById(R.id.k1);
         K2=(TextView)findViewById(R.id.k2);
@@ -62,8 +64,10 @@ public class Lyrics extends AppCompatActivity {
         V4.setTypeface(newfont);
         V6.setTypeface(newfont);
         V7.setTypeface(newfont);
-
+        bt.setTypeface(anotherfont);
         //trackName,artName,albumName,genre,mvd,yLink,des
 
     }
+
+    public void 
 }

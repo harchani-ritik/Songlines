@@ -208,14 +208,30 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="8dp"
             android:text="Lyrics"
             android:textColor="@color/DarkOrange"
             android:textSize="40sp"
             app:layout_constraintBottom_toTopOf="@+id/Lyrics"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.424"
+            app:layout_constraintHorizontal_bias="0.159"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:alpha="0.9"
+            android:background="@android:color/holo_orange_dark"
+            android:text="Share Lyrics"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/Lyrics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.886"
+            app:layout_constraintStart_toEndOf="@+id/lyricstextview" />
 
 
     </android.support.constraint.ConstraintLayout>
